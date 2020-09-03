@@ -1,22 +1,24 @@
-import fetch from 'isomorphic-fetch';
+import fetch from "isomorphic-fetch";
 
-export const FORGOT_P_SET_ERR_LOGIN_MESSAGE = 'FORGOT_P_SET_ERR_LOGIN_MESSAGE';
-export const FORGOT_P_SET_LOGIN_SPINNER_STATUS = 'FORGOT_P_SET_LOGIN_SPINNER_STATUS';
+export const FORGOT_P_SET_ERR_LOGIN_MESSAGE = "FORGOT_P_SET_ERR_LOGIN_MESSAGE";
+export const FORGOT_P_SET_LOGIN_SPINNER_STATUS =
+    "FORGOT_P_SET_LOGIN_SPINNER_STATUS";
 
-export function setErrLoginMessage (value) {
+export function setErrLoginMessage(value) {
     return {
         type: FORGOT_P_SET_ERR_LOGIN_MESSAGE,
-        payload: value
-    };
-}
-export function setLoginSpinnerStatus (value) {
-    return {
-        type: FORGOT_P_SET_LOGIN_SPINNER_STATUS,
-        payload: value
+        payload: value,
     };
 }
 
-export function sendVerificationCode (data) {
+export function setLoginSpinnerStatus(value) {
+    return {
+        type: FORGOT_P_SET_LOGIN_SPINNER_STATUS,
+        payload: value,
+    };
+}
+
+export function sendVerificationCode(data) {
     return async (dispatch) => {
         console.log("m here");
         //return false;
@@ -24,15 +26,15 @@ export function sendVerificationCode (data) {
         //await dispatch(setLoginSpinnerStatus(true));
         //const username = data.userName;
         try {
-            let result = await fetch(`${__API__}/api/v1.0/verificationcode`, {
-                method: 'POST',
-                mode: 'cors',
-                cache: 'no-cache',
+            let result = await fetch(`${__API__}/login`, {
+                method: "POST",
+                mode: "cors",
+                cache: "no-cache",
                 headers: {
-                    'Content-Type': 'application/json; charset=utf-8',
-                    'Accept': 'application/json'
+                    "Content-Type": "application/json; charset=utf-8",
+                    Accept: "application/json",
                 },
-                body: JSON.stringify(data).replace(/\s*\u0022\s*/g, '"')
+                body: JSON.stringify(data).replace(/\s*\u0022\s*/g, '"'),
             });
 
             let json = await result.json();
@@ -50,7 +52,7 @@ export function sendVerificationCode (data) {
                 );
             }*/
         } catch (e) {
-          /*  await dispatch(setLoginSpinnerStatus(false));
+            /*  await dispatch(setLoginSpinnerStatus(false));
             dispatch(setErrLoginMessage('Something went wrong!!!'));
             console.log(e); */
         }
@@ -59,30 +61,30 @@ export function sendVerificationCode (data) {
 
 export const actions = {
     sendVerificationCode,
-    setErrLoginMessage
+    setErrLoginMessage,
 };
 
 const initialState = {
-    errLoginMessage: '',
-    logInSpinner: false
+    errLoginMessage: "",
+    logInSpinner: false,
 };
 
 const ACTION_HANDLERS = {
     [FORGOT_P_SET_ERR_LOGIN_MESSAGE]: (state, action) => {
         return {
             ...state,
-            errLoginMessage: action.payload
+            errLoginMessage: action.payload,
         };
     },
     [FORGOT_P_SET_LOGIN_SPINNER_STATUS]: (state, action) => {
         return {
             ...state,
-            logInSpinner: action.payload
+            logInSpinner: action.payload,
         };
-    }
+    },
 };
 
-export default function forgotReducer (state = initialState, action) {
+export default function forgotReducer(state = initialState, action) {
     const handler = ACTION_HANDLERS[action.type];
 
     return handler ? handler(state, action) : state;

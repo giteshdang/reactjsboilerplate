@@ -1,7 +1,6 @@
 import React from 'react';
 import TechnicalSupportMessage from '../TechnicalSupportMessage/TechnicalSupportMessage';
 import PropTypes from 'prop-types';
-import './editableTextArea.scss';
 
 export class EditableTextArea extends React.PureComponent {
     constructor (props) {

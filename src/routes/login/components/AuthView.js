@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import InputGroup from "../../../components/InputGroup/InputGroup";
+import Spinner from "../../../components/Spinner/Spinner";
 import { Link } from "react-router-dom";
-import "./AuthView.scss";
+import "../../../assets/main.css";
 
 export class AuthView extends React.Component {
     constructor(props) {
@@ -27,6 +28,7 @@ export class AuthView extends React.Component {
             loginPassword: event.target.value,
         });
     }
+
     submitHandler(event) {
         event.preventDefault();
         if (!this.state.userName.length && !this.state.loginPassword.length) {
@@ -44,103 +46,67 @@ export class AuthView extends React.Component {
     render() {
         const { errGetUserMessage } = this.props.selectState;
         return (
-            <div
-                className={
-                    this.props.auth.errLoginMessage.length
-                        ? "auth-view err-login"
-                        : "auth-view"
-                }
-            >
-                {this.props.auth.errLoginMessage.length ? (
-                    <p
-                        className="err-message"
-                        dangerouslySetInnerHTML={{
-                            __html: this.props.auth.errLoginMessage,
-                        }}
-                    />
-                ) : null}
-                <div className="centered-container">
-                    <span className="logo">
-                        <Link to="/">Logo</Link>
-                    </span>
-                    <h3 className="login-title">User login</h3>
-                    {process.env.NODE_ENV !== "production" ? (
-                        <small>
-                            You are running this application in{" "}
-                            <b>{process.env.NODE_ENV}</b> mode.
-                        </small>
+            <div className="bg-white items-center my-2" >
+                <div
+                    className={
+                        this.props.auth.errLoginMessage.length
+                            ? "auth-view err-login"
+                            : "bg-white shadow-md rounded px-8 pt-6 pb-8 xl:w-1/4 mb-4 items-center my-2"
+                    }
+                >
+                    {this.props.auth.errLoginMessage.length ? (
+                        <p
+                            className="err-message"
+                            dangerouslySetInnerHTML={{
+                                __html: this.props.auth.errLoginMessage,
+                            }}
+                        />
                     ) : null}
-
-                    <form
-                        className="login-form"
-                        onSubmit={this.submitHandler}
-                        formNoValidate>
-                        <InputGroup
-                            id="loginUsername"
-                            label="Username or e-mail address"
-                            type="text"
-                            placeholder=""
-                            subtitle={
-                                "You may login with either your assigned username or your e-mail address."
-                            }
-                            error={
-                                this.props.auth.errLoginMessage
-                                    .toLocaleLowerCase()
-                                    .indexOf("user") >= 0
-                            }
-                            value={this.state.userName}
-                            onChange={this.changeUsername}
-                        />
-                        <InputGroup
-                            id="loginPassword"
-                            label="Password"
-                            type="password"
-                            placeholder=""
-                            subtitle={"The password field is case sensitive."}
-                            value={this.state.loginPassword}
-                            error={
-                                this.props.auth.errLoginMessage
-                                    .toLocaleLowerCase()
-                                    .indexOf("password") >= 0
-                            }
-                            onChange={this.changePwd}
-                        />
-                        <div className="bottom-login-part margin-bottom-15">
-                            <button className="btn btn-default margin-r-10">
-                                Login
-                            </button>
-                            {this.props.auth.logInSpinner && <Spinner />}
-                            
-                        </div>
-                        {errGetUserMessage === "non-member" ? (
-                            <p className="non-member-message">
-                                This control panel is for members. For
-                                administrators, managers and API users, please
-                                click{" "}
-                                <a href="https://www.localsurveyorsdirect.co.uk/user">
-                                    here to log in.
+                    <div className="px-3 mb-6 md:mb-0">
+                        <span className="logo">
+                            <Link to="/">Logo</Link>
+                        </span>
+                        <h3 className="font-bold text-xl mb-2">User login</h3>
+                        <form class="login_form" onSubmit={this.submitHandler}>
+                            <div class="form_title">
+                                <h3>Login</h3>
+                            </div>
+                            <div class="form-item">
+                                <label>Username or Email Address</label>
+                                <br />
+                                <input
+                                    className="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    type="text"
+                                    value=""
+                                />
+                            </div>
+                            <div class="form-item">
+                                <label>Password</label>
+                                <br />
+                                <input
+                                    className="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    type="password"
+                                    value=""
+                                />
+                            </div>
+                            <div class="form-item form-item--checkbox">
+                                <input type="checkbox" value="" />
+                                <label>Remember Me</label>
+                            </div>
+                            <div className="flex items-center justify-between">
+                                <button
+                                    type="submit"
+                                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                >
+                                    Login
+                                </button>
+                                <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
+                                href="#">
+                                Forgot Password?
                                 </a>
-                            </p>
-                        ) : null}
-                        <p className="login-info">
-                            <Link to="/forgot-password">Reset Password</Link>
-                        </p>
-                        <p className="login-info">
-                            If you need any help logging in, please contact our
-                            enquiry line on{" "}
-                            <a href="tel:01962 674840">01962 674840</a> or
-                            email:
-                            <a href="mailto:example@email.com">
-                                enquiries@localsurveyorsdirect.co.uk
-                            </a>
-                        </p>
-                        <p>
-                            Return to main website{" "}
-                            <a href="https://www.localsurveyorsdirect.co.uk">
-                                www.localsurveyorsdirect.co.uk
-                            </a>
-                        </p>
-                    </form>
+                                </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         );

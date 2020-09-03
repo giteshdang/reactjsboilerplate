@@ -10,10 +10,10 @@ export const InputGroup = ({ id, label, type, placeholder, value, subtitle, erro
     }
     return (
         <div className={error ? 'error-group form-group' : 'form-group'}>
-            <label htmlFor={id}>{label}<span className='req'>*</span></label>
+            <label htmlFor={id}>{label}<span className='inline items-center'>*</span></label>
             <input
                 type={type}
-                className='form-control'
+                className='shadow appearance-none border rounded py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline'
                 autoComplete='off'
                 id={id}
                 placeholder={placeholder}
@@ -23,12 +23,11 @@ export const InputGroup = ({ id, label, type, placeholder, value, subtitle, erro
                 onFocus={onFocus}
                 autoCorrect='off'
                 spellCheck='false'
-                noValidate
-            />
+                noValidate />
             <span className='error-form'>
                 {errors}
             </span>
-            <span className='subtitle'>{subtitle}</span>
+            <span className='text-red text-xs italic'>{subtitle}</span>
             <span className='gray-line' />
         </div>
     );

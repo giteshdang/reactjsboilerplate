@@ -7,7 +7,7 @@ module.exports = {
     // ======================================================
     development : (config) => ({
         compiler_public_path : `http://${config.server_host_name}:${config.server_port}/`,
-        api: 'http://localhost:8000/api/', //process.env.API_ENDPOINT,
+        api: 'http://localhost:5000/api', //process.env.API_ENDPOINT,
         googleMapKey: process.env.GOOGLEMAP_KEY, 
     }),
 

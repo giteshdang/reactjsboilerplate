@@ -12,14 +12,14 @@ export const checkAuthDateMiddleware = history => store => next => action => {
         diff = moment(formattedNew).diff(formattedOld, 'hours');
     };
     const diffStatus = (typeof diff === 'number');
-    if (!location || (!diffStatus && (location.pathname === '/register'))) {
+    if (!location || (!diffStatus && (location.pathname === '/Login'))) {
         next(action);
     // TODO waiting session fix on the API
     // } else if ((!diffStatus || diff >= 24) && (action && action.type !== '@@router/LOCATION_CHANGE')) {
     } else if ((!diffStatus || diff >= 24)) {
         auth.resetLoginStore();
         // store.dispatch(history.push('/login'));
-        window.location.href = '/login';
+        window.location.href = '/Login';
     } else {
         next(action);
     }

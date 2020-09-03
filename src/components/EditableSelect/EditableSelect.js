@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Select from '../Select/Select';
 import TechnicalSupportMessage from '../TechnicalSupportMessage/TechnicalSupportMessage';
-import 'react-select/dist/react-select.css';
-import './editableSelect.scss';
 import _find from 'lodash/find';
 
 const options = [{ value: true, label: 'Enabled' }, { value: false, label: 'Disabled' }];

@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import InputGroup from '../../../components/InputGroup/InputGroup';
+import Spinner from '../../../components/Spinner/Spinner';
 import { Link } from 'react-router-dom';
-import './ResetView.scss';
 import fetch from 'isomorphic-fetch';
 
 export class ResetView extends React.Component {

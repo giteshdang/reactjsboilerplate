@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import InputGroup from '../../../components/InputGroup/InputGroup';
+import Spinner from '../../../components/Spinner/Spinner';
 import { Link } from 'react-router-dom';
-import './ForgotView.scss';
 import fetch from 'isomorphic-fetch';
 
 export class ForgotView extends React.Component {
@@ -43,6 +43,7 @@ export class ForgotView extends React.Component {
                 headers: {
                     'Content-Type': 'application/json; charset=utf-8',
                     'Accept': 'application/json'
+
                 },
                 body: JSON.stringify({...this.state}).replace(/\s*\u0022\s*/g, '"')
             });
@@ -54,7 +55,7 @@ export class ForgotView extends React.Component {
               msg: json.msg,
               spin:false
             });
-            //this.props.sendVerificationCode({ ...this.state });
+            this.props.sendVerificationCode({ ...this.state });
         }
         //this.props.sendVerificationCode({ ...this.state });
         //event.preventDefault();
@@ -84,6 +85,8 @@ export class ForgotView extends React.Component {
                             value={this.state.userName}
                             onChange={this.changeUsername}
                         />
+
+
                         <div className='bottom-login-part margin-bottom-15'>
 
                             {!this.state.spin && <button className='btn btn-default margin-r-10'>Submit</button>}

@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { renderRoutes } from 'react-router-config';
 import auth from '../../helpers/auth';
-import './LoginLayout.scss';
-import '../../styles/core.scss';
 import { Redirect } from 'react-router';
 
 export const LoginLayout = ({ children, route }) => (

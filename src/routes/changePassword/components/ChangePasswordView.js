@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import TechnicalSupportMessage from '../../../components/TechnicalSupportMessage/TechnicalSupportMessage';
 import InputGroup from '../../../components/InputGroup/InputGroup';
-import './ChangePasswordView.scss';
 import FooterWidget from "../../../components/FooterWidget/FooterWidget";
 import Spinner from '../../../components/Spinner/Spinner';
 import auth from '../../../helpers/auth';

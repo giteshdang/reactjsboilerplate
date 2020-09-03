@@ -1,7 +1,6 @@
 import React from 'react';
 import Select from '../../../../components/Select/Select';
 import TechnicalSupportMessage from '../../../../components/TechnicalSupportMessage/TechnicalSupportMessage';
-import './AccountBox.scss';
 import PropTypes from 'prop-types';
 import _find from 'lodash/find';
 const options = [{ value: 1, label: 'yes' }, { value: 0, label: 'no' }];

@@ -2,7 +2,6 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import TechnicalSupportMessage from '../../../components/TechnicalSupportMessage/TechnicalSupportMessage';
-import './UserView.scss';
 
 export class UserView extends React.Component {
     constructor (props) {

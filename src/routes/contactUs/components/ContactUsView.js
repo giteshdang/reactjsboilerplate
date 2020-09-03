@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import TechnicalSupportMessage from '../../../components/TechnicalSupportMessage/TechnicalSupportMessage';
 // import PropTypes from 'prop-types';
-import './ContactUsView.scss';
 // import FooterWidget from '../../../components/FooterWidget/FooterWidget';
 import PropTypes from "prop-types";
 

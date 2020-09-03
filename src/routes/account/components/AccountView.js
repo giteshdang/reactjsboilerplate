@@ -4,7 +4,6 @@ import AccountBox from "./AccountBox/AccountBox";
 import MessageBoard from "../../../components/MessageBoard/MessageBoard";
 import TechnicalSupportMessage from "../../../components/TechnicalSupportMessage/TechnicalSupportMessage";
 import { Link } from "react-router-dom";
-import "./AccountView.scss";
 
 const mocAddress = {
     street: "",

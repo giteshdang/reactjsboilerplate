@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './DeleteBar.scss';
 import pure from 'recompose/pure';
 
 export const DeleteBar = ({ open, text, acceptCallback, declineCallback }) => {
@@ -14,14 +13,14 @@ export const DeleteBar = ({ open, text, acceptCallback, declineCallback }) => {
                 <button className='btn btn-danger accept-btn' onClick={() => acceptCallback()}>Yes</button>
             </div>
         </div>
-    );  
-};      
-        
+    );
+};
+
 DeleteBar.propTypes = {
     open: PropTypes.bool.isRequired,
     text: PropTypes.string.isRequired,
     acceptCallback: PropTypes.func.isRequired,
     declineCallback: PropTypes.func.isRequired
-};      
+};
 
 export default pure(DeleteBar);

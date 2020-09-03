@@ -8,13 +8,15 @@ import Account from './account';
 import Dashboard from './dashboard';
 import ContactUs from './contactUs';
 import Login from './login';
+import Signup from './Signup';
 import Forgot from './forgot';
 import Reset from './reset';
 import Error404 from './Error404';
 import { renderRoutes } from 'react-router-config';
 import { Root } from './../layouts/Root';
 import { Redirect } from 'react-router';
-import RegisterView from './Register/components/RegisterView';
+import '../assets/main.css';
+//import ChangePassword from './changePassword';
 
 export const redirectRoute = () => (<Redirect to='/dashboard' />);
 export const routes = [
@@ -74,17 +76,17 @@ export const routes = [
                 ]
             },
             {
-                path: '/register',
-                component: RegisterView,
+                path: '/Signup',
+                component: Signup,
                 routes: [
                     {
-                        path: '/register',
+                        path: '/signup',
                         exact: true,
-                        component: RegisterView
+                        component: Login
                     },
                     {
-                        path: '/register/:errorType',
-                        component: RegisterView
+                        path: '/Signup/:errorType',
+                        component: Signup
                     }
                 ]
             },

@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './messageBoard.scss';
 import pure from 'recompose/pure';
 
 export const MessageBoard = ({ boardText, openBoardStatus, isErrModal }) => {

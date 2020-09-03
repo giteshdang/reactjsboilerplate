@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import { renderRoutes } from 'react-router-config';
 import { Link } from 'react-router-dom';
 import auth from '../../helpers/auth';
-import './CoreLayout.scss';
-import '../../styles/core.scss';
 import { Redirect } from 'react-router';
 
 

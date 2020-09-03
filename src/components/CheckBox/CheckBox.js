@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './CheckBox.scss';
 
 class Checkbox extends React.PureComponent {
     render () {

@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './RadioButton.scss';
 import pure from 'recompose/pure';
 
 export const RadioButton = ({ checked, value, label, callbackChange }) => {

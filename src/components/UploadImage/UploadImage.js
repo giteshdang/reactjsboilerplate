@@ -1,6 +1,5 @@
 import React from 'react';
 import Dropzone from 'react-dropzone';
-import './uploadImage.scss';
 import PropTypes from 'prop-types';
 
 export const handleDropRejected = (...args) => console.log('reject', args);

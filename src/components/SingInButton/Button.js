@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Button.scss';
 
 export const SingButton = ({ children, onClick }) => {
     return (

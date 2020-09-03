@@ -1,7 +1,6 @@
 import React from 'react';
 // import { IndexLink, Link } from 'react-router';
 import { NavLink } from 'react-router-dom';
-import './Tabs.scss';
 
 export const Tabs = (props) => {
     return <div className='tab-container'>

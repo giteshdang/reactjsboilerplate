@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Tooltip.scss';
 import pure from 'recompose/pure';
 
 export const Tooltip = ({ message }) => {

@@ -1,5 +1,4 @@
 import React from 'react';
-import './TechnicalSupportMessage.scss';
 import pure from 'recompose/pure';
 
 export const TechnicalSupportMessage = () => {

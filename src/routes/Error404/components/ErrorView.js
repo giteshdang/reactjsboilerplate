@@ -1,5 +1,4 @@
 import React from 'react';
-import './ErrorView.scss';
 const redirectToDashboard = [
   '/user',
   '/user/login',

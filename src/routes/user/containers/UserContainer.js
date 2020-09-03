@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 import { withJob } from 'react-jobs';
 import RedBox from 'redbox-react';
 
-
 const mapDispatchToProps = (dispatch) => ({
     dispatch,
     ...bindActionCreators(actions, dispatch)
