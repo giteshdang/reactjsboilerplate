@@ -57,8 +57,8 @@ export function Signup (data) {
 }
 
 export const actions = {
-    logIn,
-    setErrLoginMessage
+    Signup,
+    setErrSignupMessage
 };
 
 const initialState = {
