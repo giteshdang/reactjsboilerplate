@@ -5,15 +5,12 @@ import Modal from '../../../components/Modal/Modal';
 import Select from '../../../components/Select/Select';
 import TechnicalSupportMessage from '../../../components/TechnicalSupportMessage/TechnicalSupportMessage';
 import RadioButton from '../../../components/RadioButton/RadioButton';
-import MemberWidget from '../../../components/MemberWidget/MemberWidget';
 import PropTypes from 'prop-types';
 import _get from 'lodash/get';
 import _sortBy from 'lodash/sortBy';
 import './selectWrapperView.scss';
 import 'react-select/dist/react-select.css';
 import auth from '../../../helpers/auth';
-import getSiteLogo from '../../../helpers/getSiteLogo';
-import Spinner from '../../../components/Spinner/Spinner';
 import Autocomplete from 'react-autocomplete';
 
 const ignoreBusinessSelect = [
@@ -44,9 +41,11 @@ const ignoreMemberWidgetBottom = [
   '/dashboard/feedback',
   '/dashboard/directory-details'
 ];*/
+
 const ignoreTopTitle = [
   '/dashboard'
 ];
+
 const addServicesLink = [
   '/dashboard/services',
   '/dashboard/postcode-set/'
@@ -55,6 +54,7 @@ const addServicesLink = [
 const ignoreTopPartHeader = [
   '/dashboard/thanks-for-upgrading'
 ];
+
 const redirectToDashboard = [
   '/user',
   '/user/login',
@@ -66,6 +66,7 @@ non-upgrade-info',
 '/dashboard/direct-debit',
 '/dashboard/manage-services'
 */
+
 const professions = [
     'Architects',
     'Electricians',
@@ -84,6 +85,7 @@ let businessModalConfig = {
     modalSize: 'small',
     modalChildComponent: null
 };
+
 export class SelectWrapperView extends React.Component {
     constructor (props) {
         super(props);
@@ -113,7 +115,7 @@ export class SelectWrapperView extends React.Component {
         this.canDoMasq = this.canDoMasq.bind(this);
         this.canSeeContent = this.canSeeContent.bind(this);
         this.requestTimer = null;
-    }
+    }   
     componentDidCatch (error, errorInfo) {
         console.log(error, errorInfo);
         this.setState({ hasError: true });

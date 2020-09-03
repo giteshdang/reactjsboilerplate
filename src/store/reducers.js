@@ -9,7 +9,7 @@ import dashboardReducer from '../routes/dashboard/modules/dashboard';
 import forgotReducer from '../routes/forgot/modules/forgot';
 import resetReducer from '../routes/reset/modules/reset';
 import changePasswordReducer from '../routes/changePassword/modules/changePassword';
-
+import registerReducer from '../routes/Register/modules/Register';
 //
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
@@ -27,6 +27,7 @@ export const makeRootReducer = (asyncReducers) => {
         forgotState: forgotReducer,
         resetState: resetReducer,
         changePasswordState: changePasswordReducer,
+        registerState: registerReducer,
         ...asyncReducers
     });
 };

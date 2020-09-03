@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import { actions } from '../modules/auth';
+import { actions } from '../modules/Register';
 import { bindActionCreators } from 'redux';
-import AuthView from '../components/AuthView';
+import RegisterView from '../components/RegisterView';
 
 const mapDispatchToProps = (dispatch) => ({
     dispatch,
@@ -13,4 +13,4 @@ const mapStateToProps = (state) => ({
     selectState: state.selectState
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(AuthView);
+export default connect(mapStateToProps, mapDispatchToProps)(RegisterView);

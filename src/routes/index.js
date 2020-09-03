@@ -14,7 +14,7 @@ import Error404 from './Error404';
 import { renderRoutes } from 'react-router-config';
 import { Root } from './../layouts/Root';
 import { Redirect } from 'react-router';
-//import ChangePassword from './changePassword';
+import RegisterView from './Register/components/RegisterView';
 
 export const redirectRoute = () => (<Redirect to='/dashboard' />);
 export const routes = [
@@ -49,11 +49,6 @@ export const routes = [
                                 exact: true,
                                 component: Account
                             },
-                            /*{
-                                path: '/dashboard/change-password',
-                                exact: true,
-                                component: ChangePassword
-                            },*/
                             {
                                 path: '/dashboard/*',
                                 component: Error404
@@ -75,6 +70,21 @@ export const routes = [
                     {
                         path: '/login/:errorType',
                         component: Login
+                    }
+                ]
+            },
+            {
+                path: '/register',
+                component: RegisterView,
+                routes: [
+                    {
+                        path: '/register',
+                        exact: true,
+                        component: RegisterView
+                    },
+                    {
+                        path: '/register/:errorType',
+                        component: RegisterView
                     }
                 ]
             },
